@@ -1,5 +1,5 @@
 import { useState } from "react"
-import {Input} from "../services/constants"
+// import {Input} from "../services/constants"
 
 function Form () {
 
@@ -10,7 +10,18 @@ function Form () {
         city: ""
     })
 
+    console.log(formData)
+    function handleChange (event) {
+       setFormData( prevFromDate =>  {
+        return {
+            ...prevFromDate,
+            [event.target.name]: event.target.value
+        }
+        
+       })
 
+    }
+    
     // async function handleClick () {
     //     const res = await Input()
     //     let event = res.data._embedded.events
@@ -27,6 +38,7 @@ function Form () {
                 name="keyword"
                 value={formData.keyword}
                 type="text"
+                onChange={handleChange}
                 />
 
                 <input 
@@ -34,6 +46,7 @@ function Form () {
                 name="startDateTime"
                 value={formData.startDateTime}
                 type="text"
+                onChange={handleChange}
                 />
 
                 <input 
@@ -41,6 +54,7 @@ function Form () {
                 name="endDateTime"
                 value={formData.endDateTime}
                 type="text"
+                onChange={handleChange}
                 />
 
                 <input 
@@ -48,6 +62,7 @@ function Form () {
                 name="city"
                 value={formData.city}
                 type="text"
+                onChange={handleChange}
                 />
 
                 <button> SEARCH </button> 
