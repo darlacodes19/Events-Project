@@ -1,5 +1,7 @@
+import { useEffect } from "react"
 import { useState } from "react"
-// import {Input} from "../services/constants"
+import {Input} from "../services/constants"
+import axios from "axios"
 
 function Form () {
 
@@ -10,7 +12,7 @@ function Form () {
         city: ""
     })
 
-    console.log(formData)
+    
     function handleChange (event) {
        setFormData( prevFromDate =>  {
         return {
@@ -21,12 +23,29 @@ function Form () {
        })
 
     }
+
+        useEffect(() => {
+            fetchEvent()
+        },[])
+  
+         //fingure our handleClick function parameters 
+    async function fetchEvent () {
+
+
+        try{
+
+            const response = await axios.get(Input(formData.keyword,formData.city))
+            console.log(response)
+        }catch(error) {
+            console.log(error)
+        }
+            
+       
+    }
+   
     
-    // async function handleClick () {
-    //     const res = await Input()
-    //     let event = res.data._embedded.events
-    //     console.log(event)
-    //   }
+   
+    
     return (
 
         <div> 
@@ -65,7 +84,7 @@ function Form () {
                 onChange={handleChange}
                 />
 
-                <button> SEARCH </button> 
+                <button onClick={fetchEvent}> SEARCH </button> 
                 
             </form> 
 
