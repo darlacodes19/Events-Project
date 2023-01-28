@@ -1,10 +1,12 @@
-import { useEffect } from "react"
+import { useEffect  } from "react"
 import { useState } from "react"
-import {Input} from "../services/constants"
+// import {Input} from "../services/constants"
 import axios from "axios"
 
 function Form () {
 
+   
+    
     const [formData , setFormData] = useState({
         keyword: "",
         startDateTime: "",
@@ -24,33 +26,41 @@ function Form () {
 
     }
 
-        useEffect(() => {
-            fetchEvent()
-        },[])
-  
+    
+        // useEffect(() => {
+        //     handleSubmit()
+        // },[])
+   
+       
          //fingure our handleClick function parameters 
-    async function fetchEvent () {
+    const handleSubmit = async (e) => {
 
+        e.preventDefault();
 
+//issues might be its not recognizing the form state
+//another issure might be the input function not working 
         try{
 
-            const response = await axios.get(Input(formData.keyword,formData.city))
+            const response = await axios.get(`https://app.ticketmaster.com/discovery/v2/events.json?&apikey=w8fpajhBrG7VnfkigJmi9lHQOtiI0gYZ&keyword=${formData.keyword}&city=${formData.city}`)
+           console.log(formData.keyword)
+          
             console.log(response)
+           
+            return response
         }catch(error) {
             console.log(error)
         }
             
        
-    }
+ }
    
-    
    
     
     return (
 
         <div> 
 
-            <form>
+            <form onSubmit={handleSubmit}>
 
                 <input 
                 placeholder="Keyword"
@@ -84,7 +94,7 @@ function Form () {
                 onChange={handleChange}
                 />
 
-                <button onClick={fetchEvent}> SEARCH </button> 
+                <button type="submit"> SEARCH </button> 
                 
             </form> 
 
