@@ -41,7 +41,7 @@ function Form () {
 //another issure might be the input function not working 
         try{
 
-            const response = await axios.get(`https://app.ticketmaster.com/discovery/v2/events.json?&apikey=w8fpajhBrG7VnfkigJmi9lHQOtiI0gYZ&keyword=${formData.keyword}&city=${formData.city}`)
+            const response = await axios.get(`https://app.ticketmaster.com/discovery/v2/events.json?&apikey=w8fpajhBrG7VnfkigJmi9lHQOtiI0gYZ&includeFamily=only&keyword=${formData.keyword}&city=${formData.city}`)
            console.log(formData.keyword)
           
             console.log(response)
