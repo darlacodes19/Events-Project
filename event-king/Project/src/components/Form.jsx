@@ -1,11 +1,11 @@
-import { useEffect  } from "react"
 import { useState } from "react"
-// import {Input} from "../services/constants"
-import axios from "axios"
+import {Input} from "../services/constants"
+
 
 function Form () {
+    //w8fpajhBrG7VnfkigJmi9lHQOtiI0gYZ
 
-   
+    // `https://app.ticketmaster.com/discovery/v2/events.json?&apikey=w8fpajhBrG7VnfkigJmi9lHQOtiI0gYZ&includeFamily=only&keyword=${formData.keyword}&city=${formData.city}` 
     
     const [formData , setFormData] = useState({
         keyword: "",
@@ -41,14 +41,15 @@ function Form () {
 //another issure might be the input function not working 
         try{
 
-            const response = await axios.get(`https://app.ticketmaster.com/discovery/v2/events.json?&apikey=w8fpajhBrG7VnfkigJmi9lHQOtiI0gYZ&includeFamily=only&keyword=${formData.keyword}&city=${formData.city}`)
-           console.log(formData.keyword)
+            const response = await Input(formData.city)
+         
           
             console.log(response)
            
             return response
         }catch(error) {
             console.log(error)
+            
         }
             
        
