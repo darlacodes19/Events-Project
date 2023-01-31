@@ -6,7 +6,6 @@ import {Input} from "../services/constants";
 function Form () {
    
     const [formData , setFormData] = useState({
-        keyword: "",
         startDateTime: "",
         endDateTime: "",
         city: ""
@@ -64,13 +63,7 @@ function Form () {
 
             <form onSubmit={handleSubmit}>
 
-                <input 
-                placeholder="Keyword"
-                name="keyword"
-                value={formData.keyword}
-                type="text"
-                onChange={handleChange}
-                />
+    
 
                 <input 
                 placeholder="startDateTime"
