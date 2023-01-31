@@ -3,10 +3,7 @@ import {Input} from "../services/constants"
 
 
 function Form () {
-    //w8fpajhBrG7VnfkigJmi9lHQOtiI0gYZ
-
-    // `https://app.ticketmaster.com/discovery/v2/events.json?&apikey=w8fpajhBrG7VnfkigJmi9lHQOtiI0gYZ&includeFamily=only&keyword=${formData.keyword}&city=${formData.city}` 
-    
+   
     const [formData , setFormData] = useState({
         keyword: "",
         startDateTime: "",
@@ -39,6 +36,7 @@ function Form () {
 
 //issues might be its not recognizing the form state
 //another issure might be the input function not working 
+//the issue was that I was doing axios call here also and you only need to do it once
         try{
 
             const response = await Input(formData.city)

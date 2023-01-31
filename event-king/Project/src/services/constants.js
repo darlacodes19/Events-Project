@@ -12,13 +12,14 @@ import axios from "axios"
 const BASE_URL = 'https://app.ticketmaster.com/discovery/v2/events.json?'
 
 
-export async function Input (keyword,city) {
+export async function Input (city) {
 try {
-    // console.log(process.env.REACT_APP_API_KEY)
-    const response = await axios.get(`${BASE_URL}&apikey=${process.env.REACT_APP_MY_KEY}&keyword=${keyword}&city=${city}`)
-    return response
     
+    const response = await axios.get(`${BASE_URL}&apikey=${process.env.REACT_APP_MY_KEY}&includeFamily=only&city=${city}`)
+    return response
+   
 }catch(error) {
     console.log(error)
+    console.log("input hello")
 }
 }
