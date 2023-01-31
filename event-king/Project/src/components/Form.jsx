@@ -13,7 +13,7 @@ function Form () {
     })
 
     const [startDate, setStartDate] = useState(new Date());
-    console.log(startDate)
+    
     
     function handleChange (event) {
        setFormData( prevFromDate =>  {
@@ -100,7 +100,12 @@ function Form () {
                 
             </form> 
 
-            <DatePicker selected={startDate} onChange={ (date) => setStartDate(date)} format="yyyy-MM-dd" value={new Date()}/>
+            <DatePicker 
+            selected={startDate} 
+            onChange={ (date) => setStartDate(date)}
+            format="y-MM-dd"
+            value={startDate}
+             />
 
         </div>
     )
