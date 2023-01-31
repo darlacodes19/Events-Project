@@ -1,5 +1,6 @@
-import { useState } from "react"
-import {Input} from "../services/constants"
+import { useState } from "react";
+import DatePicker from "react-date-picker";
+import {Input} from "../services/constants";
 
 
 function Form () {
@@ -10,6 +11,8 @@ function Form () {
         endDateTime: "",
         city: ""
     })
+
+    const [startDate, setStartDate] = useState(new Date());
 
     
     function handleChange (event) {
@@ -39,7 +42,7 @@ function Form () {
 //the issue was that I was doing axios call here also and you only need to do it once
         try{
 
-            const response = await Input(formData.city)
+            const response = await Input(formData.city, formData.startDateTime , formData.endDateTime)
          
           
             console.log(response)
@@ -97,6 +100,7 @@ function Form () {
                 
             </form> 
 
+            <DatePicker selected={startDate} onChange={ (date) => setStartDate(date)} />
 
         </div>
     )
