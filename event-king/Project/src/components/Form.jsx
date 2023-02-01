@@ -4,18 +4,17 @@ import {Input} from "../services/constants";
 
 
 function Form () {
-   
-    const [formData , setFormData] = useState({
-        city: ""
-    })
 
-    const [startDate, setStartDate] = useState(new Date());
-    
-    
+    const [location,setLocation] = useState("")
+    const [startDate,setStartDate] = useState(new Date())
+    const [endDate,setEndDate] = useState("")
+   
+       
+ 
     function handleChange (event) {
-       setFormData( prevFromDate =>  {
+       setLocation( prevLocation =>  {
         return {
-            ...prevFromDate,
+            ...prevLocation,
             [event.target.name]: event.target.value
         }
         
@@ -23,13 +22,38 @@ function Form () {
 
     }
 
+     // const [formData , setFormData] = useState({
+        //     city: "",
+        //     startDate: new Date()
+        
+        // })
+
+    // function handleChange(e, name) {
+
+    //     if(name) {
+    //         setFormData( prevFormData => {
+    //             return {
+    //                 ...prevFormData,
+    //                 [name] : e
+
+    //             }
+                
+    //         })
+    //     } else {
+    //         setFormData ( prevFormData => {  
+    //             return {
+    //                 ...prevFormData,
+    //                 [e.target.name]: e.target.value
+    //             }          
+               
+    //         })
+    //     }
+    // }
+
     
-        // useEffect(() => {
-        //     handleSubmit()
-        // },[])
-   
        
-         //fingure our handleClick function parameters 
+       
+        
     const handleSubmit = async (e) => {
 
         e.preventDefault();
@@ -39,7 +63,7 @@ function Form () {
 //the issue was that I was doing axios call here also and you only need to do it once
         try{
 
-            const response = await Input(formData.city, formData.startDateTime , formData.endDateTime)
+            const response = await Input(location, startDate , endDate)
          
           
             console.log(response)
@@ -53,7 +77,8 @@ function Form () {
        
  }
    
-   
+ //value is going from defined to undefined -----------> need to fix this
+
     
     return (
 
@@ -65,22 +90,36 @@ function Form () {
                 <input 
                 placeholder="city"
                 name="city"
-                value={formData.city}
+                value={location}
                 type="text"
-                onChange={handleChange}
+                onChange= { handleChange}
                 />
+
+
+        <DatePicker 
+            selected={startDate} 
+            onChange={(date)=> {setStartDate(date)}}
+            format="y-MM-dd"
+            value={startDate} 
+            name="startDate"
+            minDate={new Date()}
+             />
+
+
+        <DatePicker 
+            selected={endDate} 
+            onChange={ (date ) => setEndDate(date)}
+            format="y-MM-dd"
+            value={endDate}
+            name="endDate"
+             />
+
 
                 <button type="submit"> SEARCH </button> 
                 
             </form> 
 
-            <DatePicker 
-            selected={startDate} 
-            onChange={ (date) => setStartDate(date)}
-            format="y-MM-dd"
-            value={startDate}
-             />
-
+            
         </div>
     )
 }
