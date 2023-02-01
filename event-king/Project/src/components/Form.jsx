@@ -9,18 +9,18 @@ function Form () {
     const [startDate,setStartDate] = useState(new Date())
     const [endDate,setEndDate] = useState("")
    
-       
+       console.log(location)
  
-    function handleChange (event) {
-       setLocation( prevLocation =>  {
-        return {
-            ...prevLocation,
-            [event.target.name]: event.target.value
-        }
+    // function handleChange (event) {
+    //    setLocation( prevLocation =>  {
+    //     return {
+    //         ...prevLocation,
+    //         [event.target.name]: event.target.value
+    //     }
         
-       })
+    //    })
 
-    }
+    // }
 
      // const [formData , setFormData] = useState({
         //     city: "",
@@ -89,16 +89,16 @@ function Form () {
 
                 <input 
                 placeholder="city"
-                name="city"
+                name="location"
                 value={location}
                 type="text"
-                onChange= { handleChange}
+                onChange= {(event) => setLocation(event.target.value)}
                 />
 
 
         <DatePicker 
             selected={startDate} 
-            onChange={(date)=> {setStartDate(date)}}
+            onChange={(date) => {setStartDate(date)}}
             format="y-MM-dd"
             value={startDate} 
             name="startDate"
