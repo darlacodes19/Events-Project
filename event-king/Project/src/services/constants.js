@@ -1,21 +1,13 @@
 import axios from "axios"
-// import dotenv from 'dotenv'
-// dotenv.config()
 
-// You can use the &source parameter countryCode=US
-// filter by postal code : postalCode 
-//filter by city: city 
-//filter by keyword : keyword 
-//&startDateTime=${startDateTime}&endDateTime=${endDateTime}
-// const ROOT_URL ='https://app.ticketmaster.com/discovery/v2/
 
 const BASE_URL = 'https://app.ticketmaster.com/discovery/v2/events.json?'
 
 
-export async function Input (city) {
+export async function Input (city, startDateTime , endDateTime) {
 try {
     
-    const response = await axios.get(`${BASE_URL}&apikey=${process.env.REACT_APP_MY_KEY}&includeFamily=only&city=${city}`)
+    const response = await axios.get(`${BASE_URL}&apikey=${process.env.REACT_APP_MY_KEY}&includeFamily=only&city=${city}&startDateTime=${startDateTime}&endDateTime=${endDateTime}`)
     return response
    
 }catch(error) {
