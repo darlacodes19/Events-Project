@@ -52,8 +52,32 @@ function Form () {
 
     
        
-       
+       //startDateTime'2016-01-01T00:00:00Z'
+       //endDateTime "2023-05-14T19:00:00Z"
         
+       
+//date from date-picker is an object 
+       function formatDate(dateObject) {
+            let year = dateObject.getFullYear()
+            let month = dateObject.getMonth() + 1
+            if (month < 10) {
+                month = '0' + month;
+            }
+
+            let day = dateObject.getDate()
+
+            if(day < 10) {
+                day = '0' + day;
+            }
+
+            let dateString = `${year}-${month}-${day}T00:00:00Z`
+
+            return dateString
+            
+       }
+       console.log(startDate)
+       console.log(formatDate(startDate))
+
     const handleSubmit = async (e) => {
 
         e.preventDefault();
@@ -63,7 +87,7 @@ function Form () {
 //the issue was that I was doing axios call here also and you only need to do it once
         try{
 
-            const response = await Input(location, startDate , endDate)
+            const response = await Input(location , formatDate(startDate))
          
           
             console.log(response)
