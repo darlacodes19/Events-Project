@@ -3,6 +3,7 @@ body {
 }
 
 .main-title {
+    font-size: 6.25rem;
     color: #fff;
     text-shadow:
     0 0 7px #fff,
