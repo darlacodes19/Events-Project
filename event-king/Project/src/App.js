@@ -11,7 +11,11 @@ function App() {
   return (
     
     <div className="App">
-      <Form /> 
+
+      <div className='main-section'>
+        <h2> Explore family frindly events you can count on </h2> 
+        <Form /> 
+      </div>
       
   </div>
 
