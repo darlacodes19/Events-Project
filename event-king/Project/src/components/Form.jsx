@@ -87,7 +87,7 @@ function Form () {
 //the issue was that I was doing axios call here also and you only need to do it once
         try{
 
-            const response = await Input(location , formatDate(startDate))
+            const response = await Input(location , formatDate(startDate) , formatDate(endDate))
          
           
             console.log(response)
@@ -108,15 +108,16 @@ function Form () {
 
         <div> 
 
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit} className="form">
 
 
                 <input 
                 placeholder="city"
                 name="location"
                 value={location}
-                type="text"
+                type="search"
                 onChange= {(event) => setLocation(event.target.value)}
+                
                 />
 
 
