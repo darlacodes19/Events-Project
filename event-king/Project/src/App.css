@@ -23,8 +23,12 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    border: 2px solid red;
     height: 100vh;
    
     
+}
+
+.form input[type="search"]{
+    
+    height: 30px
 }
