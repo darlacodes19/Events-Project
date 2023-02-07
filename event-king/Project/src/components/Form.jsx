@@ -110,9 +110,11 @@ function Form () {
 
             <form onSubmit={handleSubmit} className="form">
 
-
+            <span class="material-symbols-outlined">
+            location_on
+            </span>
                 <input 
-                placeholder="city"
+                placeholder="Which city are you in?"
                 name="location"
                 value={location}
                 type="search"
