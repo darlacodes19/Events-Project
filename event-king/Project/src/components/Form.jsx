@@ -1,6 +1,7 @@
 import { useState } from "react";
 import DatePicker from "react-date-picker";
 import {Input} from "../services/constants";
+import { EventCard } from "./EventCard";
 
 
 function Form () {
@@ -145,6 +146,8 @@ function Form () {
                 <button type="submit"> SEARCH </button> 
                 
             </form> 
+
+            <EventCard />
 
             
         </div>
