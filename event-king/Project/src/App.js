@@ -1,4 +1,6 @@
 import './App.css';
+import { useState } from "react";
+import { Input } from './services/constants';
 import Form from './components/Form';
 import { Header } from './components/Header';
 import { Footer } from './components/Footer';
@@ -8,8 +10,8 @@ import { Footer } from './components/Footer';
 function App() {
 
   const [location,setLocation] = useState("")
-    const [startDate,setStartDate] = useState(new Date())
-    const [endDate,setEndDate] = useState("")
+  const [startDate,setStartDate] = useState(new Date())
+  const [endDate,setEndDate] = useState("")
    
       
  
@@ -117,7 +119,15 @@ function App() {
 
       <div className='main-section'>
         <h2 className='main-title'> Explore family frindly events you can count on </h2> 
-        <Form /> 
+        <Form 
+       location={location}
+       setLocation={setLocation}
+       startDate={startDate}
+       setStartDate={setStartDate}
+       endDate={endDate}
+       setEndDate={setEndDate}
+       handleSubmit={handleSubmit}
+        /> 
       </div>
 
       <Footer /> 

@@ -1,10 +1,10 @@
-import { useState } from "react";
+
 import DatePicker from "react-date-picker";
-import {Input} from "../services/constants";
 
 
 
-function Form () {
+
+function Form ({location , endDate , startDate , setEndDate , setLocation , setStartDate , handleSubmit}) {
 
     
     
