@@ -4,6 +4,7 @@ import { Input } from './services/constants';
 import Form from './components/Form';
 import { Header } from './components/Header';
 import { Footer } from './components/Footer';
+import { EventCard } from './components/EventCard';
 
 
 
@@ -129,6 +130,8 @@ function App() {
        handleSubmit={handleSubmit}
         /> 
       </div>
+
+      <EventCard />
 
       <Footer /> 
       
