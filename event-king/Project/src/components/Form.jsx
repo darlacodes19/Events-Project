@@ -110,7 +110,7 @@ function Form () {
 
             <form onSubmit={handleSubmit} className="form">
 
-            <span class="material-symbols-outlined">
+            <span className="material-symbols-outlined">
             location_on
             </span>
                 <input 
