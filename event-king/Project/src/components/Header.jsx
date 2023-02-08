@@ -5,7 +5,7 @@ export function Header () {
     return (
 
         <div>
-               <h3> Logo goes here </h3>
+               <img src={require("../assets/CONNECT..jpg")} alt="logo" height="50px" /> 
         </div> 
     )
 
