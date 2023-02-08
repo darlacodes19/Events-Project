@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap');
+
 body {
    background-image: url(assets/pexels-ylanite-koppens-796605.jpg);
    background-repeat: no-repeat;
@@ -5,17 +7,9 @@ body {
 }
 
 .main-title {
-    font-size: 6.25rem;
-    color: #fff;
-    text-shadow:
-    0 0 7px #fff,
-    0 0 10px #fff,
-    0 0 21px #fff,
-    0 0 42px #0fa,
-    0 0 82px #0fa,
-    0 0 92px #0fa,
-    0 0 102px #0fa,
-    0 0 151px #0fa;
+    font-size: 3rem;
+    
+    
 }
 
 .main-section {
@@ -30,13 +24,26 @@ body {
     
 }
 
-.form input[type="search"]{
+
+
+.material-symbols-outlined {
+    position: absolute;
+    z-index: 1;
+    top: 470px;
     
+}
+
+.form {
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+.form input[type="search"]{
     height: 50px;
-    width:300px;
-    padding:10px;
+    width:330px;
+    padding:30px;
     border-radius:0px;
     border-style: none;
+    font-size: 18px;
 }
 
 .react-date-picker__wrapper {
