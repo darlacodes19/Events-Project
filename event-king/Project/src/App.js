@@ -13,6 +13,7 @@ function App() {
   const [location,setLocation] = useState("")
   const [startDate,setStartDate] = useState(new Date())
   const [endDate,setEndDate] = useState("")
+  const [eventResults,setEventResults] = useState("")
    
       
  
@@ -97,8 +98,10 @@ function App() {
          
           
             let results = response.data._embedded.events
+
+            setEventResults(results)
            
-            return response
+            return results
         }catch(error) {
             console.log(error)
             
