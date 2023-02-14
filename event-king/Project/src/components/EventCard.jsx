@@ -16,7 +16,15 @@ export function EventCard ({eventResults}) {
 
        {eventResults.map((e) => {
         return (
-            <h3 key={e.id}> {e.name} </h3>
+            <div key={e.id}> 
+            <h3> {e.name} </h3>
+            <img src={e.images[0].url}  alt="event description"/>
+            {/* <p> {e.description}</p>
+            <p> {e.url}</p> */}
+            
+            </div>
+            
+             
         )
        })}
 
