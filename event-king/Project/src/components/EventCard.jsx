@@ -2,7 +2,7 @@ export function EventCard ({eventResults}) {
 
     
 
-    if(!eventResults) return "null"
+    if(!eventResults) return " Sorry No events"
     console.log(eventResults)
 
     // const events = eventResults.map(function(element,index) {
@@ -22,8 +22,9 @@ export function EventCard ({eventResults}) {
             {/* <p> {e.description}</p>
             <p> {e.url}</p> */}
             <p> {e.dates.start.localDate}</p>
+            <p> {e.dates.start.localTime}</p>
             <p> {e._embedded.venues[0].name}</p>
-            <button> More information </button>
+           <a href={e.url} target="_blank" rel="noreferrer">   <button> Get Tickets </button> </a>
             
             </div>
             
