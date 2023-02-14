@@ -21,6 +21,9 @@ export function EventCard ({eventResults}) {
             <img src={e.images[0].url}  alt="event description"/>
             {/* <p> {e.description}</p>
             <p> {e.url}</p> */}
+            <p> {e.dates.start.localDate}</p>
+            <p> {e._embedded.venues[0].name}</p>
+            <button> More information </button>
             
             </div>
             
