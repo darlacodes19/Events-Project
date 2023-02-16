@@ -7,7 +7,8 @@ import { Footer } from './components/Footer';
 import { EventCard } from './components/EventCard';
 import { NoEventsPage } from './components/NoEventsPage';
 
-
+//Think about what the user wants/the user experience while on your page 
+//Playing around with data from an API => Formatting it in a way that will be pleasing for the user 
 
 function App() {
 
@@ -18,6 +19,9 @@ function App() {
   
    
   
+   
+        
+      
       
  
     // function handleChange (event) {
@@ -103,10 +107,17 @@ function App() {
             let results = response.data._embedded.events
 
             setEventResults(results)
+            
+
+           
            
             return results
         }catch(error) {
             console.log(error)
+            setEventResults(undefined)
+
+           
+            
             
         }
             
@@ -121,7 +132,7 @@ function App() {
  
   return (
     
-    <div className="App">
+    <div className="main-page">
        <Header />
 
       <div className='main-section'>
@@ -139,7 +150,11 @@ function App() {
 
       {/* do this only after clicking search */}
 
-      { eventResults === undefined ? <EventCard eventResults={eventResults} /> : <NoEventsPage />}
+
+      {eventResults === undefined ? <NoEventsPage /> :  <EventCard eventResults={eventResults} /> }
+
+      
+
 
       <Footer /> 
       
