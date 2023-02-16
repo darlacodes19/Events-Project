@@ -1,9 +1,25 @@
 @import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap');
-
-body {
-   background-image: url(assets/pexels-ylanite-koppens-796605.jpg);
+*, *::before, *::after {
+    box-sizing: border-box;
+  }
+/* body {
+   background-image: url(assets/pexels-emma-bauso-2253879.jpg);
    background-repeat: no-repeat;
+   background-size: 100vw;
 
+} */
+
+
+
+.main-page {
+    background-image: url(assets/pexels-emma-bauso-2253879.jpg);
+    background-size: cover;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    opacity: 0.75;
 }
 
 .main-title {
@@ -50,5 +66,22 @@ body {
     border: none;
     
 }
- 
+
+/* EVENT CARD */
+
+.events-card-div{
+    display: flex;
+    flex-wrap:wrap;
+}
+
+.event-card {
+    border: 2px solid black;
+    width:300px;
+    margin: 26px;
+   
+}
+
+.event-image {
+    width: 300px;
+}
   

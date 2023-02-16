@@ -5,6 +5,7 @@ import Form from './components/Form';
 import { Header } from './components/Header';
 import { Footer } from './components/Footer';
 import { EventCard } from './components/EventCard';
+import { NoEventsPage } from './components/NoEventsPage';
 
 
 
@@ -14,7 +15,9 @@ function App() {
   const [startDate,setStartDate] = useState(new Date())
   const [endDate,setEndDate] = useState("")
   const [eventResults,setEventResults] = useState("")
+  
    
+  
       
  
     // function handleChange (event) {
@@ -82,8 +85,8 @@ function App() {
             
        }
       
-       console.log("The type of variable is",typeof endDate)
-       console.log(formatDate(startDate))
+      //  console.log("The type of variable is",typeof endDate)
+      //  console.log(formatDate(startDate))
 
     const handleSubmit = async (e) => {
 
@@ -134,7 +137,9 @@ function App() {
         /> 
       </div>
 
-      <EventCard />
+      {/* do this only after clicking search */}
+
+      { eventResults === undefined ? <EventCard eventResults={eventResults} /> : <NoEventsPage />}
 
       <Footer /> 
       
