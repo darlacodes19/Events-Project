@@ -1,17 +1,12 @@
 import formatDate from "../helpers/formatDate"
+import convertTime from "../helpers/convertTime"
 
 export function EventCard ({eventResults}) {
 
     
 
-    if(!eventResults) return " Sorry No events"
+    if(!eventResults) return " "
     console.log(eventResults)
-
-    // const events = eventResults.map(function(element,index) {
-    //     return element
-    // })
-
-    // console.log(events)
 
     return (
         <div className="events-card-div">
@@ -22,8 +17,11 @@ export function EventCard ({eventResults}) {
             <img src={e.images[0].url}  alt="event description" className="event-image"/>
             <h3> {e.name} </h3>
             <p> {formatDate(e.dates.start.localDate)}</p>
-            <p> {e.dates.start.localTime}</p>
+            <p> {convertTime(e.dates.start.localTime)}</p>
             <p> {e._embedded.venues[0].name}</p>
+            <p> {e._embedded.venues[0].address.line1}</p>
+            <p> {e._embedded.venues[0].city.name}</p>
+            <p> {e._embedded.venues[0].state.stateCode}</p>
            <a href={e.url} target="_blank" rel="noreferrer">   <button> Get Tickets </button> </a>
             
             </div>
