@@ -1,9 +1,6 @@
 export default function formatDate (date) {
         let splitDate = date.split('-')
 
-        // const newDate = splitDate[1] + '-' + splitDate[2] + '-' + splitDate[0]
-        // console.log(splitDate)
-
         let month = splitDate[1]
 
         if (month === '01') {
