@@ -46,7 +46,7 @@
 .material-symbols-outlined {
     position: absolute;
     z-index: 1;
-    top: 470px;
+    top: 407px;
     
 }
 
@@ -63,10 +63,6 @@
     font-size: 18px;
 }
 
-.react-date-picker__wrapper {
-    border: none;
-    
-}
 
 /* EVENT CARD */
 
