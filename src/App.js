@@ -7,6 +7,10 @@ import { Footer } from './components/Footer';
 import { EventCard } from './components/EventCard';
 import { NoEventsPage } from './components/NoEventsPage';
 
+import "react-date-picker/dist/DatePicker.css";
+// import "../node_modules/react-datepicker/dist/react-datepicker.css";
+// import '../node_modules/react-date-picker/dist/DatePicker.css';
+
 //Think about what the user wants/the user experience while on your page 
 //Playing around with data from an API => Formatting it in a way that will be pleasing for the user 
 
