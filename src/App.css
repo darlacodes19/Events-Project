@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap');
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -58,10 +59,29 @@
     height: 50px;
     width:330px;
     padding:30px;
-    border-radius:0px;
+    border-radius: 1rem;
     border-style: none;
     font-size: 18px;
 }
+
+.datePicker{
+    height: 50px;
+    background-color: aquamarine;
+    border-radius: 1rem;
+    
+}
+
+
+.submit-btn{
+    height: 50px;
+    width: 150px;
+    border-radius: 1rem;
+    background-color: green;
+    border-style: none;
+
+}
+
+
 
 
 /* EVENT CARD */
@@ -69,22 +89,35 @@
 .events-card-div{
     display: flex;
     flex-wrap:wrap;
+   
 }
 
 .event-card {
-    border: 2px solid black;
+    /* border: 2px solid black; */
     width:300px;
     margin: 26px;
    
 }
 
 .event-image {
-    width: 300px;
+    width: 296px;
+    border-radius: 2rem;
 }
 
+.event-title {
+    margin-top: 7px;
+    margin-left: 3px;
+    margin-bottom: 5px;
+    font-size: 16px;
+}
+
+
+
+/* FOOTER */
 
 .footer {
     background-color: #837468;
     height: 50px;
 }
+
   
