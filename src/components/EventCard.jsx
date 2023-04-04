@@ -16,8 +16,10 @@ export function EventCard ({eventResults}) {
             <div key={e.id} className="event-card"> 
             <img src={e.images[0].url}  alt="event description" className="event-image"/>
             <h3 className="event-title"> {e.name} </h3>
+            <div className="date-display"> 
             <p> {formatDate(e.dates.start.localDate)}</p>
             <p> {convertTime(e.dates.start.localTime)}</p>
+            </div>
             <p> {e._embedded.venues[0].name}</p>
             {/* <p> {e._embedded.venues[0].address.line1}</p>
             <p> {e._embedded.venues[0].city.name}</p>
