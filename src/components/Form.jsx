@@ -1,5 +1,6 @@
 
 import DatePicker from "react-date-picker";
+import "react-date-picker/dist/DatePicker.css";
 
 
 
@@ -34,6 +35,7 @@ function Form ({location , endDate , startDate , setEndDate , setLocation , setS
             value={startDate} 
             name="startDate"
             minDate={new Date()}
+            wrapperClassName="datePicker"
              />
 
 
@@ -43,10 +45,12 @@ function Form ({location , endDate , startDate , setEndDate , setLocation , setS
             format="y-MM-dd"
             value={endDate}
             name="endDate"
+            className="datePicker"
+
              />
 
 
-                <button type="submit"> SEARCH </button> 
+                <button type="submit" className="submit-btn"> SEARCH </button> 
                 
             </form> 
 
