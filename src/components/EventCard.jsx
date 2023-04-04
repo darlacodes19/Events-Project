@@ -17,14 +17,15 @@ export function EventCard ({eventResults}) {
             <img src={e.images[0].url}  alt="event description" className="event-image"/>
             <h3 className="event-title"> {e.name} </h3>
             <div className="date-display"> 
-            <p> {formatDate(e.dates.start.localDate)}</p>
-            <p> {convertTime(e.dates.start.localTime)}</p>
+            <p className="date"> {formatDate(e.dates.start.localDate)}</p>
+            <span> &#x2022; </span>
+            <p className="time"> {convertTime(e.dates.start.localTime)}</p>
             </div>
-            <p> {e._embedded.venues[0].name}</p>
+            <p className="venue-name"> {e._embedded.venues[0].name}</p>
             {/* <p> {e._embedded.venues[0].address.line1}</p>
             <p> {e._embedded.venues[0].city.name}</p>
             <p> {e._embedded.venues[0].state.stateCode}</p> */}
-           <a href={e.url} target="_blank" rel="noreferrer">   <button> Get Tickets </button> </a>
+           <a href={e.url} target="_blank" rel="noreferrer">   <button className="event-card-btn"> Get Tickets </button> </a>
             
             </div>
             
