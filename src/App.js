@@ -132,12 +132,17 @@ function App() {
 
 
 
-  
+
  
   return (
     
     <div className="main-page">
        <Header />
+
+       <div className='image-section'>
+    
+            <img src = {require ("./assets/main-image.jpg" )} className="main-page-image" />
+       </div>
 
       <div className='main-section'>
         <h2 className='main-title'> Explore family frindly events you can count on </h2> 
