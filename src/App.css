@@ -13,16 +13,6 @@
 
 
 
-.main-page {
-    background-image: url(assets/pexels-emma-bauso-2253879.jpg);
-    background-size: cover;
-    position: absolute;
-    top: 0px;
-    right: 0px;
-    bottom: 0px;
-    left: 0px;
-    opacity: 0.75;
-}
 
 .main-title {
     font-size: 3rem;
@@ -30,15 +20,24 @@
     
 }
 
+.main-page-image {
+    width: 50vw;
+    height: 100vh;
+}
 .main-section {
 
-   
+    border: 2px solid red;
+    position: relative;
+    left: 700px;
+
+
+    width: 50vw;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 100vh;
-   
+    
     
 }
 
